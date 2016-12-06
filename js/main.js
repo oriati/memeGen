@@ -8,7 +8,7 @@ function init(){
     galleryCont = document.querySelector('.gallery__container');  
     renderItems();
 }
-
+/**fix!!! */
 function createItems(){
     gItems=[];
     for (var i = 1; i < 14; i++){
@@ -21,7 +21,14 @@ function createItems(){
 
 }
 
-function getKeyWords();
+function getKeyWords(){
+    // var keyWords=[];
+
+    // for (var i = 0; i < getRandomInt(2, 4); i++){
+    //     getKeyWords[getRandomInt(0,gKeyWords.length-1)];
+        
+    // }
+}
 
 
 function renderItems (){
@@ -31,3 +38,19 @@ function renderItems (){
     }
     galleryCont.innerHTML = strHtml;    
 }
+
+//  this function filters the meme gallery according to the search/keywords(works every click/type)
+function filterMeme (keyword){
+
+}
+
+function renderKeyWordsList(){
+
+}
+
+function editMode(){
+    
+}
+
+
+
