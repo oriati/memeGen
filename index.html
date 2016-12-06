@@ -25,7 +25,7 @@
     </header>
 
     <main>
-        <div class="meme-chooser">
+        <div class="meme-chooser" style="display:none">
 
             <div class="filter">
                 <div class="container">
@@ -45,6 +45,9 @@
         </div>
 
         <div class="editor">
+
+            <canvas class="editor-canvas"></canvas>
+            <div class="editor-tools"></div>
         </div>
 
     </main>
@@ -73,6 +76,7 @@
 
 
 
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="js/utils.js"></script>
     <script src="js/main.js"></script>
     <script src="js/editor.js"></script>
