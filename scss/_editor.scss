@@ -1,4 +1,10 @@
 .editor {
-    height: 200px;
+    height: 500px;
     background: var(--dark-bg);
+}
+
+.editor-canvas {
+    max-width: 600px;
+    height: auto;
+    border:1px solid #000000;
 }
