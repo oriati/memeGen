@@ -1,31 +1,36 @@
 'use strict';
 
 var gItems;
-var galleryCont;
-var gKeyWords = ['fuuny', 'animal', 'bad', 'akward', 'happy', 'sad'];
+var elGallery;
+var elKeywords;
+var gKeyWords = ['funny', 'animal', 'bad', 'akward', 'happy', 'sad'];
 
 function init() {
-    galleryCont = document.querySelector('.gallery__container');
+    elGallery = document.querySelector('.gallery__container');
+    elKeywords = document.querySelector('.keywords');
     createItems();
+    renderKeyWordsList();
 }
 
 function createItems() {
     gItems = [];
-    for (var i = 1; i < 14; i++) {
-        gItems.push({
-            id: i + 1,
-            url: "",
-            keywords: getKeyWords(),
-        })
-    }
-}
-
-function renderItems() {
     var strHtml;
     for (var i = 1; i < 14; i++) {
-        strHtml += '<img src="assets/memes/' + i + '.jpg">';
+        gItems.push({
+            id: i,
+            url: "",
+            keywords: getKeyWords(),
+        });
     }
-    galleryCont.innerHTML = strHtml;
+    renderItems(gItems);
+}
+
+function renderItems(items) {
+    var strHtml = items.reduce(function(abr, item) {
+        abr += '<img src="assets/memes/' + item.id + '.jpg" id="item-' + item.id + '" class="gallery__item">';
+        return abr;
+    }, '');
+    elGallery.innerHTML = strHtml;
 }
 
 function getKeyWords() {
@@ -41,14 +46,38 @@ function getKeyWords() {
     return keywords;
 }
 
+function searchMeme(el) {
+    var keyword = el.value;
+    if (keyword === '') {
+        $('.gallery__item').removeClass('hide');
+        return;
+    }
+    filterMeme(keyword);
+}
+
 // this function filters the meme gallery according to the search/keywords
 // (works every click/type)
 function filterMeme(keyword) {
-
+    gItems.forEach(function(item) {
+        var match = item.keywords.some(function(itemKeyword) {
+            return keyword === itemKeyword;
+        });
+        var itemStr = '#item-' + item.id;
+        if (!match) {
+            document.querySelector(itemStr).classList.add('hide');
+        } else {
+            document.querySelector(itemStr).classList.remove('hide');
+        }
+    });
 }
 
 function renderKeyWordsList() {
-
+    var strHtml = gKeyWords.reduce(function(abr, keyword) {
+        var keywordStr = "'" + keyword + "'";
+        abr += '<button onclick="filterMeme('+ keywordStr +')">' + keyword + '</button">';
+        return abr;
+    }, '');
+    elKeywords.innerHTML = strHtml;
 }
 
 function editMode() {

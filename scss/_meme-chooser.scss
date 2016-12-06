@@ -1,0 +1,10 @@
+.gallery__container {
+    /*display: flex;*/
+    img {
+        width: 60px;
+        float: left;
+    }
+    .hide {
+        opacity: 0.2;
+    }
+}
