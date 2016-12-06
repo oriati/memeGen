@@ -25,7 +25,7 @@
     </header>
 
     <main>
-        <div class="meme-chooser">
+        <div style="display:none" class="meme-chooser">
 
             <div class="search">
                 <div class="container">
@@ -47,10 +47,11 @@
 
         <div class="editor">
 
-            <canvas class="editor-canvas" width="650" height="650">Sorry, no canvas available</canvas>
+            <canvas class="editor-canvas" width="620" height="620">Sorry, no canvas available</canvas>
+            <div>editor</div>
             <div class="editor-tools"></div>
-                <input type="text" onkeyup="createMeme(this)" class="input-text-top">
-                <input type="text" onkeyup="createMeme(this)" class="input-text-bot">
+                <input type="text" onkeyup="addText(this,'top')" class="input-text">
+                <input type="text" onkeyup="addText(this,'bot')" class="input-text-bot">
             <img style= "display:none" id= "testCan-image" src="assets/memes/3.jpg">'
         </div>
 
