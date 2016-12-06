@@ -2,7 +2,7 @@
 
 var gItems;
 var galleryCont;
-var gKeyWords = ['fuuny', 'animal', 'yes', 'akward', 'happy', 'sad'];
+var gKeyWords = ['fuuny', 'animal', 'bad', 'akward', 'happy', 'sad'];
 
 function init() {
     galleryCont = document.querySelector('.gallery__container');
