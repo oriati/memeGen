@@ -25,16 +25,27 @@ function createItems() {
     renderItems(gItems);
 }
 
+// function renderItems(items) {
+//     var strHtml = items.reduce(function (abr, item) {
+//         abr += '<img  onclick="toggleMode(this)" src="assets/memes/'
+//             + item.id
+//             + '.jpg" id="item-'
+//             + item.id
+//             + '" class="gallery__item">';
+//         return abr;
+//     }, '');
+//     elGallery.innerHTML = strHtml;
+// }
+
 function renderItems(items) {
-    var strHtml = items.reduce(function (abr, item) {
-        abr += '<img  onclick="toggleMode(this)" src="assets/memes/'
-            + item.id
-            + '.jpg" id="item-'
-            + item.id
-            + '" class="gallery__item">';
-        return abr;
-    }, '');
-    elGallery.innerHTML = strHtml;
+    items.forEach(function (item) {
+        var template = $('#hex-template').clone();
+        template.attr('id', 'item-' + item.id);
+        template.removeClass('template');
+        template.find('img').attr('src', 'assets/memes/' + item.id +'.jpg');
+        template.appendTo('#categories');
+
+    });
 }
 
 function getKeyWords() {
@@ -89,16 +100,21 @@ function renderKeyWordsList() {
     elKeywords.innerHTML = strHtml;
 }
 
+// toggling between Editor & Gallery
 function toggleMode(trigger) {
+    // image from url
     if (trigger === 'url') {
-        var urlImage = document.querySelector('#url-input').value;
-        console.log(urlImage);
+        var urlImage = new Image();
+        urlImage.src = document.querySelector('#url-input').value;
         createMeme(urlImage);
     }
+    // img from gallery
     else if (trigger) {
         createMeme(trigger);
         document.querySelector('main').classList.add('editor-mode');
-    } else {
+    }
+    // closing the editor with buttons
+    else {
         document.querySelector('main').classList.remove('editor-mode');
     }
 }

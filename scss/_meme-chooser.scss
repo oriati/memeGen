@@ -1,3 +1,14 @@
+.meme-chooser {
+    margin-top: 75px;
+}
+
+.controls {
+    .container {
+        border-top: solid 1px var(--light-border);
+        padding: 25px 70px;
+    }
+}
+
 .gallery__container {
     /*display: flex;*/
     img {

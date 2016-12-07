@@ -1,0 +1,31 @@
+.main-nav__items {
+    /*display: inline-block;*/
+    float: right;
+}
+
+.main-nav__items li {
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: rem(10px);
+    color: #fff;
+    margin: 0;
+    a {
+         &:hover {
+             color: var(--warm-bg);
+         }
+         &.active {
+             color: var(--active-color);
+             cursor: default;
+         }
+         &:after {
+             content: "·";
+             color: #494e62;
+             padding: 0 5px;
+         }
+    }
+
+    &:last-child a:after {
+        content: "";
+        margin: 0;
+    }
+}

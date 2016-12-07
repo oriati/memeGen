@@ -13,12 +13,15 @@
     <header>
         <div class="container">
             <nav class="main-nav">
-                <ul>
-                    <li>Portfolio</li>
-                    <li>About</li>
-                    <li>Arrow down</li>
-                    <li>Blog</li>
-                    <li>Get in touch</li>
+                <a href="/" alt="Da Meme Generator" class="logo">
+                    <h1>Da Meme Generator</h1>
+                </a>
+                <ul class="clean-list main-nav__items flex">
+                    <li><a href="#" class="active">Portfolio</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Arrow down</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Get in touch</a></li>
                 </ul>
             </nav>
         </div>
@@ -31,12 +34,16 @@
                 <div class="container">
                     <input type="text" onkeyup="searchMeme(this)" id="seach-input" placeholder="filter by keywords">
                     <input type="text" id="url-input" placeholder="upload image from url">
-                    <button onclick="toggleMode('url')">upload</button>
+                    <button onclick="toggleMode('url')" class="clear-btn upload-btn">upload</button>
+                    <button onclick="" class="clear-btn preview-btn list-view">list</button>
+                    <button onclick="" class="clear-btn preview-btn grid-view">grid</button>
                 </div>
             </div>
 
             <div class="gallery">
                 <div class="container gallery__container">
+                    <ul class="clr" id="categories">
+                    </ul>
                 </div>
             </div>
 
@@ -52,9 +59,9 @@
             <canvas class="editor-canvas" width="620" height="620">Sorry, no canvas available</canvas>
             <div>editor</div>
             <div class="editor-tools"></div>
-                <input type="text" onkeyup="addText(this,'top')" class="input-text">
-                <input type="text" onkeyup="addText(this,'bot')" class="input-text-bot">
-            <img style= "display:none" id= "testCan-image" src="assets/memes/3.jpg">
+            <input type="text" onkeyup="addText(this,'top')" class="input-text">
+            <input type="text" onkeyup="addText(this,'bot')" class="input-text-bot">
+            <img style="display:none" id="testCan-image" src="assets/memes/3.jpg">
             <button onclick="toggleMode()">close</button>
         </div>
 
@@ -81,6 +88,17 @@
     </div>
 
     <footer>Copyright 2016 by ASi Oren & Ori Atias</footer>
+
+    <!-- Hexagon Template -->
+    
+        <li id="hex-template" class="template">
+            <div>
+                <img onclick="toggleMode(this)" src="assets/loading.gif" id="" class="gallery__item">
+            </div>
+        </li>
+    
+
+    
 
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="js/utils.js"></script>
