@@ -1,10 +1,13 @@
 .about {
     background: var(--active-color);
-    font-size: ren(12px);
+    font-size: rem(12px);
 }
 
 .about__item {
     padding: 10px 0;
+    .sub-title {
+        color: #256a61;
+    }
     .about__item-wrapper {
         padding: 55px 0;
         border-right: solid 1px #219d84;
@@ -12,6 +15,9 @@
     }
     &:nth-child(even) { 
         background: var(--active-second-color);
+        .sub-title {
+            color: #20816d;
+        }
         .about__item-wrapper {
             border-right: solid 1px #56847e;
             border-left: solid 1px #56847e;

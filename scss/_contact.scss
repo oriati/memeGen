@@ -1,3 +1,24 @@
 .contact {
     background: var(--dark-bg);
+    padding: 60px 0;
+}
+.contact__form {
+    margin: 0 20px;
+    width: calc(75% - 30px);
+
+    input, textarea {
+        width: 100%;
+        background: #454545;
+        line-height: 40px;
+        border: none;
+        padding: 0 15px;
+        margin-bottom: 15px;
+        color: var(--main-color);
+        font-size: var(--font-small);
+    }
+}
+.contact__info {
+    font-size: var(--font-small);
+    margin-right: 20px;
+    width: calc(25% - 30px);
 }
