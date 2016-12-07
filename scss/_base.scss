@@ -14,11 +14,18 @@ html {
     font-size: 14px;
   }
 }
+body {
+  background: linear-gradient(to bottom, #57938b 0px,#57938b 65px,#ffffff 125px);
+}
 
 a {
   color: currentColor;
   text-decoration: none;
   display: inline-block;
+}
+
+h1, h2, h3, h4, h5, h6, .sub-title {
+  font-family: var(--title-font);
 }
 
 ul,

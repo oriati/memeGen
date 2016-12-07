@@ -9,6 +9,10 @@
   max-width: 100%;
 }
 
+.template {
+  display: none;
+}
+
 /* Breakpoint mixins */
 
 @mixin for-mobile-only {
