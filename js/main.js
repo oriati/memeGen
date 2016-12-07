@@ -89,9 +89,14 @@ function renderKeyWordsList() {
     elKeywords.innerHTML = strHtml;
 }
 
-function toggleMode(img) {
-    if (img) {
-        createMeme(img);
+function toggleMode(trigger) {
+    if (trigger === 'url') {
+        var urlImage = document.querySelector('#url-input').value;
+        console.log(urlImage);
+        createMeme(urlImage);
+    }
+    else if (trigger) {
+        createMeme(trigger);
         document.querySelector('main').classList.add('editor-mode');
     } else {
         document.querySelector('main').classList.remove('editor-mode');

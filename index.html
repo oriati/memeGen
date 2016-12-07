@@ -27,9 +27,11 @@
     <main>
         <div class="meme-chooser">
 
-            <div class="search">
+            <div class="controls">
                 <div class="container">
-                    <input type="text" onkeyup="searchMeme(this)" id="seach-input">
+                    <input type="text" onkeyup="searchMeme(this)" id="seach-input" placeholder="filter by keywords">
+                    <input type="text" id="url-input" placeholder="upload image from url">
+                    <button onclick="toggleMode('url')">upload</button>
                 </div>
             </div>
 
