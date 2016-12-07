@@ -1,0 +1,9 @@
+main {
+    position: relative;
+    right: 0;
+    transition: all 2s;
+}
+
+main.editor-mode {
+    right: 100%;
+}

@@ -17,18 +17,16 @@
                     <h1>Da Meme Generator</h1>
                 </a>
                 <ul class="clean-list main-nav__items flex">
-                    <li><a href="#" class="active">Portfolio</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Arrow down</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Get in touch</a></li>
+                    <li><a href="#meme-generator" class="active">Gallery</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Get in touch</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <main>
-        <div class="meme-chooser ">
+    <main id="meme-generator">
+        <div class="meme-chooser">
 
             <div class="controls">
                 <div class="container">
@@ -47,7 +45,7 @@
                 </div>
             </div>
 
-            <div class="keywords">
+            <div class="keywords flex justify-center align-center">
                 <div class="container">
                 </div>
             </div>
@@ -57,7 +55,7 @@
         <div class="editor">
 
             <canvas class="editor-canvas" width="600" height="600">Sorry, no canvas available</canvas>
-            <img style= "display:none" id= "testCan-image" src="assets/memes/3.jpg">
+            <img style="display:none" id="testCan-image" src="assets/memes/3.jpg">
 
             <div>editor</div>
 
@@ -66,15 +64,15 @@
                 <input type="text" onkeyup="renderImage()" class="editor-tools__text-bot">
 
 
-                
-                <input type="color" oninput="updateFont('color', this.value)" class="editor-font__color" value="#101010"> 
-                
 
-                <button onclick = "updateFont('sizeMod', 2)"> + </button>
-                <button onclick = "updateFont('sizeMod', -2)"> - </button>
+                <input type="color" oninput="updateFont('color', this.value)" class="editor-font__color" value="#101010">
 
-                <button onclick = "updateFont('shadow')">Shadow</button>
-                
+
+                <button onclick="updateFont('sizeMod', 2)"> + </button>
+                <button onclick="updateFont('sizeMod', -2)"> - </button>
+
+                <button onclick="updateFont('shadow')">Shadow</button>
+
                 <select onChange="updateFont()" class="editor-tools__font">
                     <option value="Arial">Arial</option>
                     <option value="Verdana">Verdana</option>
@@ -82,51 +80,88 @@
                     <option value="Courier New">Courier New</option>
                 </select>
 
-            <button onclick="toggleMode()">close</button>
+                <button onclick="toggleMode()">close</button>
             </div>
         </div>
-               
-
     </main>
 
-    <div class="about">
-        <div class="container">
+    <div class="about" id="about">
 
-            <h2>Ori</h2>
-            <div class="sub-title">Superman</div>
-            <div class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam aliquid ab vel rerum maxime, totam nobis, atque
-                consectetur omnis ipsa, enim harum nostrum expedita quaerat dignissimos fuga assumenda minima. Totam.</div>
+        <article class="about__item">
+            <div class="container">
+                <div class="about__item-wrapper flex">
+                    <img src="assets/asi.png" alt="Asi Oren">
+                    <div class="about__item-text">
+                        <h2>Asi Oren</h2>
+                        <div class="sub-title">Cinematographer/Front End Developer</div>
+                        <div class="desc">I’m a freelance Cinematographer/Coder on a quest to craft beautiful and innovative creations across
+                            the digital spectrum. I've had the privilege of working with talented artists, teams and clients
+                            both from the Culture and Education sectors and am always on the look out for the next project.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
 
-
-        </div>
+        <article class="about__item">
+            <div class="container">
+                <div class="about__item-wrapper flex">
+                    <img src="assets/ori.png" alt="Ori Atias">
+                    <div class="about__item-text">
+                        <h2>Ori Atias</h2>
+                        <div class="sub-title">Superman</div>
+                        <div class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non unde labore, totam perferendis provident
+                            fugit harum aperiam, accusantium ullam, rerum expedita illo reprehenderit voluptate quae recusandae
+                            nisi qui deleniti voluptates!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </article>
     </div>
 
-    <div class="contact">
+    <div class="contact" id="contact">
         <div class="container">
-            <h2>Get in touch</h2>
-            <div class="sub-title">In order to get in touch use the contact form below</div>
-
+            <form action="GET">
+                <h2>Get in touch</h2>
+                <div class="sub-title">In order to get in touch use the contact form below</div>
+                <input type="text" placeholder="Name(Required)" />
+                <input type="email" placeholder="Email(Required)" />
+                <input type="subject" placeholder="Subject" />
+                <textarea rows="4" cols="50" placeholder="Write your message here">
+            </textarea>
+                <button type="submit">Send</button>
+            </form>
+            <div class="contact__info">
+                <div class="contact--info-desc">
+                Quisque Hendrerit: purus dapibus, ornare nibh vitae, viverra nibh. Fusce vitae aliquam tellus. Proin sit amet volutpat libero. Nulla sed nunc et tortor luctus faucibus morbi vitae.
+                </div>
+                <div class="contact--info-address">Elm St. 14/05 Lost City</div>
+                <div class="contact--info-phone">+ 3528 331 86 35</div>
+                <div class="contact--info-mail">info@hexalcorp.com</div>
+            </div>
+          
         </div>
     </div>
 
     <footer>Copyright 2016 by ASi Oren & Ori Atias</footer>
 
     <!-- Hexagon Template -->
-    
-        <li id="hex-template" class="template">
-            <div>
-                <img onclick="toggleMode(this)" src="assets/loading.gif" id="" class="gallery__item">
-            </div>
-        </li>
-    
 
-    
+    <li id="hex-template" class="template">
+        <div>
+            <img onclick="toggleMode(this)" src="assets/loading.gif" id="" class="gallery__item">
+        </div>
+    </li>
+
+    <!-- scripts -->
 
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="js/utils.js"></script>
     <script src="js/main.js"></script>
     <script src="js/editor.js"></script>
     <script src="js/form.js"></script>
+    <script src="js/scroll.js"></script>
 
 </body>
 

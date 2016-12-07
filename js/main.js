@@ -25,18 +25,6 @@ function createItems() {
     renderItems(gItems);
 }
 
-// function renderItems(items) {
-//     var strHtml = items.reduce(function (abr, item) {
-//         abr += '<img  onclick="toggleMode(this)" src="assets/memes/'
-//             + item.id
-//             + '.jpg" id="item-'
-//             + item.id
-//             + '" class="gallery__item">';
-//         return abr;
-//     }, '');
-//     elGallery.innerHTML = strHtml;
-// }
-
 function renderItems(items) {
     items.forEach(function (item) {
         var template = $('#hex-template').clone();
@@ -94,7 +82,7 @@ function filterMeme(keyword, search) {
 function renderKeyWordsList() {
     var strHtml = gKeyWords.reduce(function (abr, keyword) {
         var keywordStr = "'" + keyword + "'";
-        abr += '<button onclick="filterMeme(' + keywordStr + ')">' + keyword + '</button">';
+        abr += '<button onclick="filterMeme(' + keywordStr + ')" class="clean-btn">' + keyword + '</button">';
         return abr;
     }, '');
     elKeywords.innerHTML = strHtml;
@@ -102,19 +90,23 @@ function renderKeyWordsList() {
 
 // toggling between Editor & Gallery
 function toggleMode(trigger) {
+    var elMain = document.querySelector('main');
     // image from url
     if (trigger === 'url') {
         var urlImage = new Image();
         urlImage.src = document.querySelector('#url-input').value;
         drawTemplate(urlImage);
+        elMain.classList.add('editor-mode');
     }
     // img from gallery
     else if (trigger) {
         drawTemplate(trigger);
         document.querySelector('main').classList.add('editor-mode');
+        elMain.classList.add('editor-mode');
     }
     // closing the editor with buttons
     else {
         document.querySelector('main').classList.remove('editor-mode');
+        elMain.classList.remove('editor-mode');
     }
 }
