@@ -56,31 +56,37 @@
 
         <div class="editor">
 
-            <canvas class="editor-canvas" width="600" height="600">Sorry, no canvas available</canvas>
-            <img style= "display:none" id= "testCan-image" src="assets/memes/3.jpg">
+            <canvas class="editor-canvas">Sorry, no canvas available</canvas>
 
             <div>editor</div>
 
             <div class="editor-tools">
-                <input type="text" onkeyup="renderImage()" class="editor-tools__text-top">
-                <input type="text" onkeyup="renderImage()" class="editor-tools__text-bot">
-
-
-                
-                <input type="color" oninput="updateFont('color', this.value)" class="editor-font__color" value="#101010"> 
-                
-
-                <button onclick = "updateFont('sizeMod', 2)"> + </button>
-                <button onclick = "updateFont('sizeMod', -2)"> - </button>
-
-                <button onclick = "updateFont('shadow')">Shadow</button>
-                
-                <select onChange="updateFont()" class="editor-tools__font">
-                    <option value="Arial">Arial</option>
-                    <option value="Verdana">Verdana</option>
-                    <option value="Times New Roman">Times New Roman</option>
-                    <option value="Courier New">Courier New</option>
-                </select>
+                <div class="top-text">
+                    <input type="text"  onkeyup  =   "renderImage()" class="editor-tools__text-top">
+                    <input type="color" oninput  =   "updateFont(0, 'color', this.value)" class="editor-font__color" value="#101010"> 
+                    <button             onclick  =   "updateFont(0, 'sizeMod', 2)"> + </button>
+                    <button             onclick  =   "updateFont(0, 'sizeMod', -2)"> - </button>
+                    <button             onclick  =   "updateFont(0, 'shadow')">Shadow</button>
+                    <select             onChange =   "updateFont(0, 'font',value')" class="editor-tools__font">
+                        <option value="Arial">Arial</option>
+                        <option value="Verdana">Verdana</option>
+                        <option value="Times New Roman">Times New Roman</option>
+                        <option value="Courier New">Courier New</option>
+                    </select>
+                </div>
+                <div class="bottom-text">
+                    <input type="text"  onkeyup  =  "renderImage()" class="editor-tools__text-bot">
+                    <input type="color" oninput  =  "updateFont(1, 'color', this.value)" class="editor-font__color" value="#101010"> 
+                    <button             onclick  =  "updateFont(1, 'sizeMod', 2)"> + </button>
+                    <button             onclick  =  "updateFont(1, 'sizeMod', -2)"> - </button>
+                    <button             onclick  =  "updateFont(1, 'shadow')">Shadow</button>
+                    <select             onChange =  "updateFont(1, 'font', value)" class="editor-tools__font">
+                        <option value="Arial">Arial</option>
+                        <option value="Verdana">Verdana</option>
+                        <option value="Times New Roman">Times New Roman</option>
+                        <option value="Courier New">Courier New</option>
+                    </select>
+                </div>
 
             <button onclick="toggleMode()">close</button>
             </div>

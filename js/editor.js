@@ -2,56 +2,59 @@
 
 var gCtx;
 var gElImg;
-var gFont = {
+// in the array gFonts, each object represent the font of a textbox in the editor, gFont[0]=top box, gFont[1]=bottom box
+var gFont = [
+    {
     shadow : false,
     weight : 'bold',
     size : 25,
     font  : 'Arial',
-    color : '#fff'}
+    color : '#fff'  },
+    {
+    shadow : false,
+    weight : 'bold',
+    size : 25,
+    font  : 'Arial',
+    color : '#fff'  }]
 
 
-/** */var font = 'Segoe UI';
-
-testCanvas();
-function testCanvas(){
-    var testImg = document.querySelector('#testCan-image');
-    drawTemplate(testImg);
-}
-
-
-
-function updateFont(paramType, value){
+//in this function the global objects in gFont are being modified -- i declares which object will be modified - 0=top, 1=bottom
+function updateFont(i, paramType, value){
     gFont.font = document.querySelector('.editor-tools__font').value;
     switch (paramType) {
-        case 'sizeMod': gFont.size += value;
+        case 'sizeMod': gFont[i].size += value;
             break;
-        case 'color': gFont.color = value;
+        case 'font': gFont[i].font += value;
             break;
-        case 'shadow': gFont.shadow = (gFont.shadow)? false : true;         
+        case 'color': gFont[i].color = value;
             break;
-
+        case 'shadow': gFont[i].shadow = (gFont.shadow)? false : true;         
+            break;
+        case 'shadow': gFont[i].weight = (gFont[i].weight==='bold')? 'normal' : 'bold';         
+            break;
         default:
             break;
     }
-    console.log('font', gFont.font);
-    console.log('size', gFont.size);
-    console.log('color', gFont.color);
     renderImage();
 }
 
 function drawTemplate(elImg) {
     gElImg = elImg;
+    var x = elImg.width;
+    var y = elImg.width;
     var canvas = document.querySelector('.editor-canvas');
+    canvas.width = x;
+    canvas.height = y;
     gCtx = canvas.getContext('2d');
-    gCtx.drawImage(elImg, 0, 0, 600, 600);
+    renderImage();
 }
 
 function renderImage (){
-    gCtx.drawImage(gElImg, 0, 0, 600, 600);
-    // ctx.font="30px Arial";
-    gCtx.font = gFont.weight+' '+ gFont.size+'px ' + gFont.font ;
-    gCtx.fillStyle = gFont.color;
-    if (gFont.shadow){
+    gCtx.drawImage(gElImg, 0, 0, gElImg.width, gElImg.height);
+    // drawing top text                     DO FOREACH ON THE TWO TEXTBOXES INSTEAD OF REPEATING YOURSELF
+    gCtx.font = gFont[0].weight+' '+ gFont[0].size+'px ' + gFont[0].font ;
+    gCtx.fillStyle = gFont[0].color;
+    if (gFont[0].shadow){
         gCtx.shadowColor = 'gray';
         gCtx.shadowBlur = 10;
         gCtx.shadowOffsetX = 3;
@@ -63,7 +66,23 @@ function renderImage (){
         gCtx.shadowOffsetY = 0;
     }
     var txtTop = document.querySelector('.editor-tools__text-top').value;
+    gCtx.fillText(txtTop, 50, 50);
+
+    // drawing bot text                      DO FOREACH ON THE TWO TEXTBOXES INSTEAD OF REPEATING YOURSELF
+    gCtx.font = gFont[1].weight+' '+ gFont[1].size+'px ' + gFont[1].font ;
+    gCtx.fillStyle = gFont[1].color;
+    if (gFont[1].shadow){
+        gCtx.shadowColor = 'gray';
+        gCtx.shadowBlur = 10;
+        gCtx.shadowOffsetX = 3;
+        gCtx.shadowOffsetY = 3;
+    } else {
+        gCtx.shadowColor = 'gray';
+        gCtx.shadowBlur = 0;
+        gCtx.shadowOffsetX = 0;
+        gCtx.shadowOffsetY = 0;
+    }
     var txtBot = document.querySelector('.editor-tools__text-bot').value;
-    gCtx.fillText(txtTop, 50, 100);
-    gCtx.fillText(txtBot, 50, 500);
+    gCtx.fillText(txtBot, (gElImg.width)/2, (gElImg.height)-40);
+
 }
