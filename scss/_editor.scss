@@ -1,6 +1,10 @@
 .editor {
     height: 500px;
     background: var(--dark-bg);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    left: 100%;
 }
 
 .editor-canvas {

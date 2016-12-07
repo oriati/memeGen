@@ -1,4 +1,29 @@
 .about {
-    height: 80px;
     background: var(--active-color);
+    font-size: ren(12px);
+}
+
+.about__item {
+    padding: 10px 0;
+    .about__item-wrapper {
+        padding: 55px 0;
+        border-right: solid 1px #219d84;
+        border-left: solid 1px #219d84;
+    }
+    &:nth-child(even) { 
+        background: var(--active-second-color);
+        .about__item-wrapper {
+            border-right: solid 1px #56847e;
+            border-left: solid 1px #56847e;
+        }
+        
+    }
+}
+
+.about__item-text {
+    margin: 0 20px;
+}
+
+.about__item img {
+    margin-left: 20px;
 }
