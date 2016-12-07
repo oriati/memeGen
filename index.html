@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>The Meme Generatot</title>
+    <title>Da Meme Generator</title>
     <link rel="stylesheet" href="dist/style.css">
 </head>
 
@@ -25,11 +25,13 @@
     </header>
 
     <main>
-        <div style="display:none" class="meme-chooser">
+        <div class="meme-chooser">
 
-            <div class="search">
+            <div class="controls">
                 <div class="container">
-                    <input type="text" onkeyup="searchMeme(this)">
+                    <input type="text" onkeyup="searchMeme(this)" id="seach-input" placeholder="filter by keywords">
+                    <input type="text" id="url-input" placeholder="upload image from url">
+                    <button onclick="toggleMode('url')">upload</button>
                 </div>
             </div>
 
@@ -50,9 +52,10 @@
             <canvas class="editor-canvas" width="600" height="600">Sorry, no canvas available</canvas>
             <div>editor</div>
             <div class="editor-tools"></div>
-                <input type="text" onkeyup="addText()" class="input-text-top">
-                <input type="text" onkeyup="addText()" class="input-text-bot">
-            <img style= "display:none" id= "testCan-image" src="assets/memes/3.jpg">'
+                <input type="text" onkeyup="addText(this,'top')" class="input-text">
+                <input type="text" onkeyup="addText(this,'bot')" class="input-text-bot">
+            <img style= "display:none" id= "testCan-image" src="assets/memes/3.jpg">
+            <button onclick="toggleMode()">close</button>
         </div>
 
     </main>
@@ -62,8 +65,9 @@
 
             <h2>Ori</h2>
             <div class="sub-title">Superman</div>
-            <div class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam aliquid ab vel rerum maxime, totam nobis, atque consectetur omnis ipsa, enim harum nostrum expedita quaerat dignissimos fuga assumenda minima. Totam.</div>
-            
+            <div class="desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam aliquid ab vel rerum maxime, totam nobis, atque
+                consectetur omnis ipsa, enim harum nostrum expedita quaerat dignissimos fuga assumenda minima. Totam.</div>
+
 
         </div>
     </div>
@@ -77,9 +81,6 @@
     </div>
 
     <footer>Copyright 2016 by ASi Oren & Ori Atias</footer>
-
-
-
 
     <script src="node_modules/jquery/dist/jquery.min.js"></script>
     <script src="js/utils.js"></script>
