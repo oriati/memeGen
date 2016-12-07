@@ -93,10 +93,10 @@ function toggleMode(trigger) {
     if (trigger === 'url') {
         var urlImage = document.querySelector('#url-input').value;
         console.log(urlImage);
-        createMeme(urlImage);
+        drawTemplate(urlImage);
     }
     else if (trigger) {
-        createMeme(trigger);
+        drawTemplate(trigger);
         document.querySelector('main').classList.add('editor-mode');
     } else {
         document.querySelector('main').classList.remove('editor-mode');
