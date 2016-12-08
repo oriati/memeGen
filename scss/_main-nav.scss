@@ -34,7 +34,15 @@
     display: inline;
 }
 
-.main-nav__mobile-checkbox { display: none }
+.main-nav__mobile-checkbox, .main-nav__mobile-icon { display: none }
+
+.main-nav__mobile-icon {
+    color: var(--active-color);
+    font-size: 23px;
+    position: absolute;
+    right: 20px;
+    top: 0;   
+}
 
 
 @media (max-width: $mobile-breakpoint) {

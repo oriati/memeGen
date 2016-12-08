@@ -65,42 +65,46 @@
                     </div>
                 </div>
 
-            </div>
-            <div class="editor">
+        </div>
 
+        <div class="editor">
+            <div class="editor-main container flex ">
                 <canvas class="editor-canvas">Sorry, no canvas available</canvas>
-
-                <div>editor</div>
-
-                <div class="editor-tools">
-                    <div class="top-text">
-                        <input type="text" onkeyup="renderImage()" class="editor-tools__text-top">
-                        <input type="color" oninput="updateFont(0, 'color', this.value)" class="editor-font__color" value="#101010">
-                        <button onclick="updateFont(0, 'sizeMod', 2)"> + </button>
-                        <button onclick="updateFont(0, 'sizeMod', -2)"> - </button>
-                        <button onclick="updateFont(0, 'shadow')">Shadow</button>
-                        <select onChange="updateFont(0, 'font',value')" class="editor-tools__font">
-                        <option value="Arial">Arial</option>
-                        <option value="Verdana">Verdana</option>
-                        <option value="Times New Roman">Times New Roman</option>
-                        <option value="Courier New">Courier New</option>
-                    </select>
+                <div class="editor-tools flex column align-center">
+                    <button class="fa fa-backward" aria-hidden="true" onclick="toggleMode()">Select Another Meme</button>
+                    <div class="texts">
+                        <div class="top-text text-box">
+                            <input type="text" onkeyup="renderImage()" class="editor-tools__text-top">
+                            <div class="editor-tools__top">
+                                <input type="color" oninput="updateFont(0, 'color', this.value)" class="editor-font__color" value="#101010">
+                                <button class="fa fa-plus" aria-hidden="true" onclick="updateFont(0, 'sizeMod', 2)"></button>
+                                <button class="fa fa-minus" aria-hidden="true" onclick="updateFont(0, 'sizeMod', -2)"></button>
+                                <button class="fa fa-adjust" onclick="updateFont(0, 'shadow')"></button>
+                                <select onChange="updateFont(0, 'font',value')" class="editor-tools__font">
+                                    <option value="Arial">Arial</option>
+                                    <option value="Verdana">Verdana</option>
+                                    <option value="Times New Roman">Times New Roman</option>
+                                    <option value="Courier New">Courier New</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="bottom-text text-box">
+                            <input type="text" onkeyup="renderImage()" class="editor-tools__text-bot">
+                            <div class="editor-tools__top">
+                                <input type="color" oninput="updateFont(1, 'color', this.value)" class="editor-font__color" value="#101010">
+                                <button class="fa fa-plus" aria-hidden="true" onclick="updateFont(1, 'sizeMod', 2)"></button>
+                                <button class="fa fa-minus" aria-hidden="true" onclick="updateFont(1, 'sizeMod', -2)"></button>
+                                <button class="fa fa-adjust" onclick="updateFont(1, 'shadow')"></button>
+                                <select onChange="updateFont(1, 'font', value)" class="editor-tools__font">
+                                    <option value="Arial">Arial</option>
+                                    <option value="Verdana">Verdana</option>
+                                    <option value="Times New Roman">Times New Roman</option>
+                                    <option value="Courier New">Courier New</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
-                    <div class="bottom-text">
-                        <input type="text" onkeyup="renderImage()" class="editor-tools__text-bot">
-                        <input type="color" oninput="updateFont(1, 'color', this.value)" class="editor-font__color" value="#101010">
-                        <button onclick="updateFont(1, 'sizeMod', 2)"> + </button>
-                        <button onclick="updateFont(1, 'sizeMod', -2)"> - </button>
-                        <button onclick="updateFont(1, 'shadow')">Shadow</button>
-                        <select onChange="updateFont(1, 'font', value)" class="editor-tools__font">
-                        <option value="Arial">Arial</option>
-                        <option value="Verdana">Verdana</option>
-                        <option value="Times New Roman">Times New Roman</option>
-                        <option value="Courier New">Courier New</option>
-                    </select>
-                    </div>
-
-                    <button onclick="toggleMode()">close</button>
+                    <button class="fa fa-download" aria-hidden="true" onclick="downloadMeme()">Download</button>
                 </div>
             </div>
         </div>
@@ -150,7 +154,7 @@
                 <input type="email" placeholder="Email(Required)" />
                 <input type="subject" placeholder="Subject" />
                 <textarea rows="4" cols="50" placeholder="Write your message here"></textarea>
-                <button type="submit" class="contact-form__sumbit-button flex-end">Send</button>
+                <button type="submit" class="contact-form__sumbit-button self-end">Send</button>
             </form>
             <div class="contact__info">
                 <div class="contact__info-desc">

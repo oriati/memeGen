@@ -2,7 +2,7 @@
 
 var gCtx;
 var gElImg;
-// in the array gFonts, each object represent the font of a textbox in the editor, gFont[0]=top box, gFont[1]=bottom box
+// in the array gFonts, each object represent the font of a textbox in the editor, gFont[0]=top box, gFont[1]=bottom bo
 var gFont = [
     {
     shadow : false,
@@ -83,6 +83,6 @@ function renderImage (){
         gCtx.shadowOffsetY = 0;
     }
     var txtBot = document.querySelector('.editor-tools__text-bot').value;
-    gCtx.fillText(txtBot, (gElImg.width)/2, (gElImg.height)-40);
+    gCtx.fillText(txtBot, 50, (gElImg.height)-50);
 
 }
