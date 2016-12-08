@@ -20,5 +20,15 @@
 .contact__info {
     font-size: var(--font-small);
     margin-right: 20px;
+    margin-top : em(100px);
     width: calc(25% - 30px);
+  
+}
+.contact__info-details{
+    margin-top : em(55px);
+}
+.contact__info-desc {
+    height: 117px;
+    width: 180px;
+    line-height: 22px
 }
