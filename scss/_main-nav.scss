@@ -57,19 +57,38 @@
     position: fixed;
     z-index: 9999;
     background: var(--headers-bg);
-    height: 100%;
-    width: auto;
-    padding-top: 1em;
+    width: 100%;
     transition: all 0.4s;
-    transform: scaleX(0);
+    transform: scaleY(0);
     opacity: 0;
-    transform-origin: left;
+    transform-origin: top;
     left: 0;
-    padding: 0 1em;
+  }
+  .main-nav__items {
+    flex-direction: column;
+    width: 100%;
+    background: var(--active-color);
+    text-align: center;
+  }
+  .main-nav__items li {
+      border-bottom: 1px solid #ffffff;
+      &.active {
+          background: var(--warm-bg);
+      }
+  }
+  .main-nav__items li a {
+      width: 100%;
+      &.active {
+          color: #fff;
+      }
+      &:hover {
+          background: var(--warm-bg);
+          color: #fff;
+      }
   }
 }
 
 #main-nav__mobile-checkbox:checked ~ .main-nav__inner {
-  transform: scaleX(1);
+  transform: scaleY(1);
   opacity: 1;
 }
