@@ -36,10 +36,11 @@
 
 .about__social-buttons{
     & a{
+        line-height: 25px;
         color:#fff;
         height: 100%;
         width: 100%;
-        text-align: center;
+
     }
     margin-top:2em;
     &>*{
@@ -49,4 +50,16 @@
         margin: none;
         display:block;
     }
+}
+.fa-facebook {
+    background:#3660a0;
+}
+.fa-twitter {
+    background:#2daae1;
+}
+.fa-google-plus {
+    background:#dc5442;
+}
+.fa-linkedin {
+    background:#096c9b;
 }
