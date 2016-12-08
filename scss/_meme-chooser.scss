@@ -12,6 +12,16 @@
     margin: 0 10px;
 }
 
+.meme-container {
+    position: relative;
+    right: 0;
+    transition: all 2s;
+}
+
+.meme-container.editor-mode {
+    right: 100%;
+}
+
 .controls {
     .container {
         border-top: solid 1px var(--light-border);
@@ -93,7 +103,7 @@
     &:first-child {
         margin-left: 25px;
         @include for-mobile-only {  
-        margin-bottom: 20px;
+            margin-bottom: 20px;
         }
     }
 }

@@ -30,77 +30,78 @@
     </header>
 
     <main id="meme-generator">
-        <div class="meme-chooser">
+        <div class="meme-container">
+            <div class="meme-chooser">
 
-            <div class="controls">
-                <div class="container flex space-between">
-                    <div class="controls__inputs">
-                        <span class="triangle-sides">
+                <div class="controls">
+                    <div class="container flex space-between">
+                        <div class="controls__inputs">
+                            <span class="triangle-sides">
                         <input type="text" onkeyup="searchMeme(this)" id="seach-input" placeholder="filter by keywords">
                         </span>
-                        <form class="triangle-sides">
-                            <input type="text" id="url-input" placeholder="upload image from url">
-                            <button onclick="toggleMode('url'); return false;" class="clean-btn upload-btn fa fa-arrow-down" aria-hidden="true"></button>
-                        </form>
+                            <form class="triangle-sides">
+                                <input type="text" id="url-input" placeholder="upload image from url">
+                                <button onclick="toggleMode('url'); return false;" class="clean-btn upload-btn fa fa-arrow-down" aria-hidden="true"></button>
+                            </form>
 
+                        </div>
+
+                        <div class="controls__buttons">
+                            <button onclick="" class="clean-btn preview-btn list-view hexagon fa fa-th-list" aria-hidden="true"></button>
+                            <button onclick="" class="clean-btn preview-btn grid-view hexagon fa fa-th" aria-hidden="true"></button>
+                        </div>
                     </div>
+                </div>
 
-                    <div class="controls__buttons">
-                        <button onclick="" class="clean-btn preview-btn list-view hexagon fa fa-th-list" aria-hidden="true"></button>
-                        <button onclick="" class="clean-btn preview-btn grid-view hexagon fa fa-th" aria-hidden="true"></button>
+                <div class="gallery">
+                    <div class="container gallery__container">
+                        <ul class="clr" id="meme-gallery">
+                        </ul>
                     </div>
                 </div>
-            </div>
 
-            <div class="gallery">
-                <div class="container gallery__container">
-                    <ul class="clr" id="meme-gallery">
-                    </ul>
+                <div class="keywords flex justify-center align-center">
+                    <div class="container">
+                    </div>
                 </div>
+
             </div>
+            <div class="editor">
 
-            <div class="keywords flex justify-center align-center">
-                <div class="container">
-                </div>
-            </div>
+                <canvas class="editor-canvas">Sorry, no canvas available</canvas>
 
-        </div>
+                <div>editor</div>
 
-        <div class="editor">
-
-            <canvas class="editor-canvas">Sorry, no canvas available</canvas>
-
-            <div>editor</div>
-
-            <div class="editor-tools">
-                <div class="top-text">
-                    <input type="text" onkeyup="renderImage()" class="editor-tools__text-top">
-                    <input type="color" oninput="updateFont(0, 'color', this.value)" class="editor-font__color" value="#101010">
-                    <button onclick="updateFont(0, 'sizeMod', 2)"> + </button>
-                    <button onclick="updateFont(0, 'sizeMod', -2)"> - </button>
-                    <button onclick="updateFont(0, 'shadow')">Shadow</button>
-                    <select onChange="updateFont(0, 'font',value')" class="editor-tools__font">
+                <div class="editor-tools">
+                    <div class="top-text">
+                        <input type="text" onkeyup="renderImage()" class="editor-tools__text-top">
+                        <input type="color" oninput="updateFont(0, 'color', this.value)" class="editor-font__color" value="#101010">
+                        <button onclick="updateFont(0, 'sizeMod', 2)"> + </button>
+                        <button onclick="updateFont(0, 'sizeMod', -2)"> - </button>
+                        <button onclick="updateFont(0, 'shadow')">Shadow</button>
+                        <select onChange="updateFont(0, 'font',value')" class="editor-tools__font">
                         <option value="Arial">Arial</option>
                         <option value="Verdana">Verdana</option>
                         <option value="Times New Roman">Times New Roman</option>
                         <option value="Courier New">Courier New</option>
                     </select>
-                </div>
-                <div class="bottom-text">
-                    <input type="text" onkeyup="renderImage()" class="editor-tools__text-bot">
-                    <input type="color" oninput="updateFont(1, 'color', this.value)" class="editor-font__color" value="#101010">
-                    <button onclick="updateFont(1, 'sizeMod', 2)"> + </button>
-                    <button onclick="updateFont(1, 'sizeMod', -2)"> - </button>
-                    <button onclick="updateFont(1, 'shadow')">Shadow</button>
-                    <select onChange="updateFont(1, 'font', value)" class="editor-tools__font">
+                    </div>
+                    <div class="bottom-text">
+                        <input type="text" onkeyup="renderImage()" class="editor-tools__text-bot">
+                        <input type="color" oninput="updateFont(1, 'color', this.value)" class="editor-font__color" value="#101010">
+                        <button onclick="updateFont(1, 'sizeMod', 2)"> + </button>
+                        <button onclick="updateFont(1, 'sizeMod', -2)"> - </button>
+                        <button onclick="updateFont(1, 'shadow')">Shadow</button>
+                        <select onChange="updateFont(1, 'font', value)" class="editor-tools__font">
                         <option value="Arial">Arial</option>
                         <option value="Verdana">Verdana</option>
                         <option value="Times New Roman">Times New Roman</option>
                         <option value="Courier New">Courier New</option>
                     </select>
-                </div>
+                    </div>
 
-                <button onclick="toggleMode()">close</button>
+                    <button onclick="toggleMode()">close</button>
+                </div>
             </div>
         </div>
     </main>

@@ -91,7 +91,7 @@ function renderKeyWordsList() {
 
 // toggling between Editor & Gallery
 function toggleMode(trigger) {
-    var elMain = document.querySelector('main');
+    var elMain = document.querySelector('.meme-container');
     // image from url
     if (trigger === 'url') {
         var urlImage = new Image();
@@ -102,12 +102,12 @@ function toggleMode(trigger) {
     // img from gallery
     else if (trigger) {
         drawTemplate(trigger);
-        document.querySelector('main').classList.add('editor-mode');
+        document.querySelector('.meme-container').classList.add('editor-mode');
         elMain.classList.add('editor-mode');
     }
     // closing the editor with buttons
     else {
-        document.querySelector('main').classList.remove('editor-mode');
+        document.querySelector('.meme-container').classList.remove('editor-mode');
         elMain.classList.remove('editor-mode');
     }
 }
