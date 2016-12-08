@@ -41,7 +41,7 @@ function updateFont(i, paramType, value){
 function drawTemplate(elImg) {
     gElImg = elImg;
     var x = elImg.width;
-    var y = elImg.width;
+    var y = elImg.height;
     var canvas = document.querySelector('.editor-canvas');
     canvas.width = x;
     canvas.height = y;
