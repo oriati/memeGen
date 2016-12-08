@@ -29,16 +29,22 @@
         <div class="meme-chooser">
 
             <div class="controls">
-                <div class="container">
-                    <span class="triangle-sides">
-                    <input type="text" onkeyup="searchMeme(this)" id="seach-input" placeholder="filter by keywords">
-                    </span>
-                    <span class="triangle-sides">
-                    <input type="text" id="url-input" placeholder="upload image from url">
-                    </span>
-                    <button onclick="toggleMode('url')" class="clear-btn upload-btn">upload</button>
-                    <button onclick="" class="clear-btn preview-btn list-view">list</button>
-                    <button onclick="" class="clear-btn preview-btn grid-view">grid</button>
+                <div class="container flex space-between">
+                    <div class="controls__inputs">
+                        <span class="triangle-sides">
+                        <input type="text" onkeyup="searchMeme(this)" id="seach-input" placeholder="filter by keywords">
+                        </span>
+                        <form class="triangle-sides">
+                        <input type="text" id="url-input" placeholder="upload image from url">
+                        <button onclick="toggleMode('url'); return false;" class="clean-btn upload-btn fa fa-arrow-down" aria-hidden="true"></button>
+                        </form>
+                        
+                    </div>
+
+                    <div class="controls__buttons">
+                        <button onclick="" class="clean-btn preview-btn list-view hexagon">list</button>
+                        <button onclick="" class="clean-btn preview-btn grid-view hexagon">grid</button>
+                    </div>
                 </div>
             </div>
 

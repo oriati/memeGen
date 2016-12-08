@@ -21,7 +21,7 @@
 }
 
 .gallery__container {
-    margin-bottom: 50px;
+    margin: 20px auto 50px auto;
     display: block;
     img {
         width: 60px;
@@ -42,11 +42,45 @@
     border: none;
     border-top: 1px solid var(--dark-bg);
     border-bottom: 1px solid var(--dark-bg);
+    color: var(--dark-bg);
+    font-size: var(--font-small);
+    padding: 0 20px;
 }
+
+.controls__inputs button {
+    background: var(--warm-bg);
+    display: block;
+    position: absolute;
+    width: 35px;
+    height: 35px;
+    border: 1px solid var(--dark-bg);
+    border-left: none;
+    top: 0;
+    right: -35px;
+    color: #fff;
+}
+
+.controls__inputs button:hover {
+    background: var(--active-color);
+}
+
+.controls__buttons button {
+    background: #fff;
+    border: 1px solid var(--dark-bg);
+    width: 35px;
+    height: 35px;
+}
+
+
+/*--------------Triangle Sides -------------------*/
 
 .triangle-sides {
     position: relative;
     display: inline-block;
+    margin: 0 20px;
+    &:first-child {
+        margin-left: 25px;
+    }
 }
 .triangle-sides:after, .triangle-sides:before {
     content: "";
@@ -68,3 +102,35 @@
 .triangle-sides:after {
     right: -12px;  
 }
+
+/*-----------Single  Hexagon ------------------*/
+
+.hexagon {
+    position: relative;
+    display: inline-block;
+    margin: 0 5px;
+    &:last-child {
+        margin-right: 0;
+    }
+}
+
+/*.hexagon:after, .hexagons:before {
+    content: "";
+    display: block;
+    width: 23px;
+    height: 23px;
+    border: 1px solid var(--dark-bg);
+    position: absolute;
+    z-index: -1;
+    top: 5px;
+    background: #fff;
+    transform: rotate(45deg);
+}
+
+.hexagon:before {
+    left: -12px;
+}
+
+.hexagon:after {
+    right: -12px;  
+}*/
