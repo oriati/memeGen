@@ -5,6 +5,7 @@ var elGallery;
 var elKeywords;
 var gKeyWords = ['funny', 'animal', 'bad', 'akward', 'happy', 'sad'];
 
+
 function init() {
     elGallery = document.querySelector('.gallery__container');
     elKeywords = document.querySelector('.keywords');
@@ -96,12 +97,12 @@ function toggleMode(trigger) {
     if (trigger === 'url') {
         var urlImage = new Image();
         urlImage.src = document.querySelector('#url-input').value;
-        drawTemplate(urlImage);
+        initCanvas(urlImage);
         elMain.classList.add('editor-mode');
     }
     // img from gallery
     else if (trigger) {
-        drawTemplate(trigger);
+        initCanvas(trigger);
         document.querySelector('.meme-container').classList.add('editor-mode');
         elMain.classList.add('editor-mode');
     }

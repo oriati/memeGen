@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="dist/style.css">
 </head>
 
-<body onload="init()">
+<body onload="init(), initEditor()">
     <header>
         <div class="container">
             <nav class="main-nav">
@@ -74,13 +74,14 @@
                     <button class="fa fa-backward" aria-hidden="true" onclick="toggleMode()">Select Another Meme</button>
                     <div class="texts">
                         <div class="top-text text-box">
-                            <input type="text" onkeyup="renderImage()" class="editor-tools__text-top">
+                            <input type="text" onkeyup="updateLabels('top', 'text', this.value)" class="editor-tools__text-top">
                             <div class="editor-tools__top">
-                                <input type="color" oninput="updateFont(0, 'color', this.value)" class="editor-font__color" value="#101010">
-                                <button class="fa fa-plus" aria-hidden="true" onclick="updateFont(0, 'sizeMod', 2)"></button>
-                                <button class="fa fa-minus" aria-hidden="true" onclick="updateFont(0, 'sizeMod', -2)"></button>
-                                <button class="fa fa-adjust" onclick="updateFont(0, 'shadow')"></button>
-                                <select onChange="updateFont(0, 'font',value')" class="editor-tools__font">
+                                <input type="color" oninput="updateLabels('top', 'color', this.value)" class="editor-font__color" value="#101010">
+                                <button class="fa fa-plus" aria-hidden="true" onclick="updateLabels('top', 'sizeMod', 2)"></button>
+                                <button class="fa fa-minus" aria-hidden="true" onclick="updateLabels('top', 'sizeMod', -2)"></button>
+                                <button class="fa fa-adjust" onclick="updateLabels('top', 'shadow')"></button>
+                                <button class="fa fa-adjust" onclick="updateLabels('top', 'weight')"></button>
+                                <select onChange="updateLabels('top', 'font', value)" class="editor-tools__font">
                                     <option value="Arial">Arial</option>
                                     <option value="Verdana">Verdana</option>
                                     <option value="Times New Roman">Times New Roman</option>
@@ -89,13 +90,14 @@
                             </div>
                         </div>
                         <div class="bottom-text text-box">
-                            <input type="text" onkeyup="renderImage()" class="editor-tools__text-bot">
+                            <input type="text" onkeyup="updateLabels('bottom', 'text', this.value)" class="editor-tools__text-bot">
                             <div class="editor-tools__top">
-                                <input type="color" oninput="updateFont(1, 'color', this.value)" class="editor-font__color" value="#101010">
-                                <button class="fa fa-plus" aria-hidden="true" onclick="updateFont(1, 'sizeMod', 2)"></button>
-                                <button class="fa fa-minus" aria-hidden="true" onclick="updateFont(1, 'sizeMod', -2)"></button>
-                                <button class="fa fa-adjust" onclick="updateFont(1, 'shadow')"></button>
-                                <select onChange="updateFont(1, 'font', value)" class="editor-tools__font">
+                                <input type="color" oninput="updateLabels('bottom', 'color', this.value)" class="editor-font__color" value="#101010">
+                                <button class="fa fa-plus" aria-hidden="true" onclick="updateLabels('bottom', 'sizeMod', 2)"></button>
+                                <button class="fa fa-minus" aria-hidden="true" onclick="updateLabels('bottom', 'sizeMod', -2)"></button>
+                                <button class="fa fa-adjust" onclick="updateLabels('bottom', 'shadow')"></button>
+                                <button class="fa fa-adjust" onclick="updateLabels('bottom', 'weight')"></button>
+                                <select onChange="updateLabels('bottom', 'font', value)" class="editor-tools__font">
                                     <option value="Arial">Arial</option>
                                     <option value="Verdana">Verdana</option>
                                     <option value="Times New Roman">Times New Roman</option>
