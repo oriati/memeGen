@@ -26,6 +26,42 @@
 
     &:last-child a:after {
         content: "";
-        margin: 0;
+        padding: 0;
     }
+}
+
+.main-nav__inner {
+    display: inline;
+}
+
+.main-nav__mobile-checkbox { display: none }
+
+
+@media (max-width: $mobile-breakpoint) {
+  .main-nav__mobile-icon {
+    display: block;
+    font-size: 2rem;
+    cursor: pointer;
+    line-height: 60px;
+  }
+  .main-nav__inner {
+    display: block;
+    position: fixed;
+    z-index: 9999;
+    background: var(--headers-bg);
+    height: 100%;
+    width: auto;
+    padding-top: 1em;
+    transition: all 0.4s;
+    transform: scaleX(0);
+    opacity: 0;
+    transform-origin: left;
+    left: 0;
+    padding: 0 1em;
+  }
+}
+
+#main-nav__mobile-checkbox:checked ~ .main-nav__inner {
+  transform: scaleX(1);
+  opacity: 1;
 }

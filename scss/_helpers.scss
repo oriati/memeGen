@@ -27,14 +27,6 @@ textarea {
   display: none;
 }
 
-/* Breakpoint mixins */
-
-@mixin for-mobile-only {
-  @media (max-width: $mobile-breakpoint) {
-    @content;
-  }
-}
-
 /*----------  Flex Helpers  ----------*/
 
 .flex {
