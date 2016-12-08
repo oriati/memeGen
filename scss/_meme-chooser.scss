@@ -1,10 +1,17 @@
 .meme-chooser {
     margin-top: 75px;
-
     .container {
         padding: 0;
     }
 }
+
+/*#meme-gallery {
+    max-height: 0;
+    transition: max-height 2s;
+    &.content {
+        max-height: 4000px;
+    }
+}*/
 
 .controls {
     .container {
@@ -34,5 +41,30 @@
     width: 180px;
     border: none;
     border-top: 1px solid var(--dark-bg);
-    border-right: 1px solid var(--dark-bg);
+    border-bottom: 1px solid var(--dark-bg);
+}
+
+.triangle-sides {
+    position: relative;
+    display: inline-block;
+}
+.triangle-sides:after, .triangle-sides:before {
+    content: "";
+    display: block;
+    width: 23px;
+    height: 23px;
+    border: 1px solid var(--dark-bg);
+    position: absolute;
+    z-index: -1;
+    top: 5px;
+    background: #fff;
+    transform: rotate(45deg);
+}
+
+.triangle-sides:before {
+    left: -12px;
+}
+
+.triangle-sides:after {
+    right: -12px;  
 }

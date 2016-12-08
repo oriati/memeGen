@@ -27,13 +27,17 @@ function createItems() {
 
 function renderItems(items) {
     items.forEach(function (item) {
-        var template = $('#hex-template').clone();
-        template.attr('id', 'item-' + item.id);
-        template.removeClass('template');
-        template.find('img').attr('src', 'assets/memes/' + item.id +'.jpg');
-        template.appendTo('#categories');
+        renderItem(item);
 
     });
+}
+
+function renderItem(item) {
+    var template = $('#hex-template').clone();
+    template.attr('id', 'item-' + item.id);
+    template.removeClass('template');
+    template.find('img').attr('src', 'assets/memes/' + item.id +'.jpg');
+    template.appendTo('#meme-gallery');   
 }
 
 function getKeyWords() {
@@ -61,23 +65,20 @@ function searchMeme(el) {
 
 // filter the gallery according to keywords
 function filterMeme(keyword, search) {
+    // Clearing the gallery
+    $('#meme-gallery').empty();
     // if the keyword came from a keyword button - clear search input
     if (!search) {
         document.querySelector('#seach-input').value = '';
-        console.log('erasing');
     }
     gItems.forEach(function (item) {
         var match = item.keywords.some(function (itemKeyword) {
             return keyword === itemKeyword;
         });
-        var itemStr = '#item-' + item.id;
-        if (!match) {
-            document.querySelector(itemStr).classList.add('hide');
-        } else {
-            document.querySelector(itemStr).classList.remove('hide');
-        }
+        if (match) { renderItem(item); }
     });
 }
+
 
 function renderKeyWordsList() {
     var strHtml = gKeyWords.reduce(function (abr, keyword) {

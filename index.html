@@ -30,8 +30,12 @@
 
             <div class="controls">
                 <div class="container">
+                    <span class="triangle-sides">
                     <input type="text" onkeyup="searchMeme(this)" id="seach-input" placeholder="filter by keywords">
+                    </span>
+                    <span class="triangle-sides">
                     <input type="text" id="url-input" placeholder="upload image from url">
+                    </span>
                     <button onclick="toggleMode('url')" class="clear-btn upload-btn">upload</button>
                     <button onclick="" class="clear-btn preview-btn list-view">list</button>
                     <button onclick="" class="clear-btn preview-btn grid-view">grid</button>
@@ -40,7 +44,7 @@
 
             <div class="gallery">
                 <div class="container gallery__container">
-                    <ul class="clr" id="categories">
+                    <ul class="clr" id="meme-gallery">
                     </ul>
                 </div>
             </div>
