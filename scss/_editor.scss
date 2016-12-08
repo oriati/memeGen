@@ -1,13 +1,48 @@
 .editor {
-    height: 500px;
-    background: var(--dark-bg);
+    height: 100%;
+    background: #404040;
     position: absolute;
     top: 0;
     width: 100%;
     left: 100%;
 }
 
+.editor-main {
+    margin-top: 2em;
+}
+
 .editor-canvas {
+    border : 1px solid #303030;
+    background: #454545;
+    padding : 2em;
+    // width : 500px;
+    // height: 500px;
     max-width: 700px;
-    // border:1px solid #000000;
+    margin-right: 2em;
+}
+
+.editor-tools{
+    width: 200px;
+}
+.texts {
+    border : 1px solid #303030;
+    padding : 1em;
+    background: #454545;
+}
+
+.editor-tools>button {
+    width : 100%;
+    &:first-child{
+        margin-bottom: 2em;
+    }
+    &:last-child{
+        margin-top: 2em;
+    }
+}
+
+.text-box>input {
+    width: 100%;
+}
+.editor-tools__font{
+    width:100%;
 }
