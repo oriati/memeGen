@@ -2,16 +2,15 @@
     margin-top: 75px;
     .container {
         padding: 0;
+        @include for-narrow-layout {  
+            justify-content: center;
+        }
     }
 }
 
-/*#meme-gallery {
-    max-height: 0;
-    transition: max-height 2s;
-    &.content {
-        max-height: 4000px;
-    }
-}*/
+#meme-gallery {
+    margin: 0 10px;
+}
 
 .controls {
     .container {
@@ -71,6 +70,19 @@
     height: 35px;
 }
 
+.controls__buttons {
+  @include for-narrow-layout {  
+    display: none;
+  }
+}
+
+.controls__inputs {
+    @include for-mobile-only {  
+        text-align: center;
+    }
+}
+
+
 
 /*--------------Triangle Sides -------------------*/
 
@@ -80,6 +92,9 @@
     margin: 0 20px;
     &:first-child {
         margin-left: 25px;
+        @include for-mobile-only {  
+        margin-bottom: 20px;
+        }
     }
 }
 .triangle-sides:after, .triangle-sides:before {
@@ -113,24 +128,3 @@
         margin-right: 0;
     }
 }
-
-/*.hexagon:after, .hexagons:before {
-    content: "";
-    display: block;
-    width: 23px;
-    height: 23px;
-    border: 1px solid var(--dark-bg);
-    position: absolute;
-    z-index: -1;
-    top: 5px;
-    background: #fff;
-    transform: rotate(45deg);
-}
-
-.hexagon:before {
-    left: -12px;
-}
-
-.hexagon:after {
-    right: -12px;  
-}*/
