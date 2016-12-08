@@ -33,3 +33,20 @@
 .about__item img {
     margin-left: 20px;
 }
+
+.about__social-buttons{
+    & a{
+        color:#fff;
+        height: 100%;
+        width: 100%;
+        text-align: center;
+    }
+    margin-top:2em;
+    &>*{
+        width:25px;
+        height: 25px;
+        border: none;
+        margin: none;
+        display:block;
+    }
+}
