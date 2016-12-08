@@ -5,6 +5,9 @@
 .contact__form {
     margin: 0 20px;
     width: calc(75% - 30px);
+    @include for-mobile-only {  
+        width: 100%;
+    }
 
     input, textarea {
         width: 100%;
@@ -22,7 +25,9 @@
     margin-right: 20px;
     margin-top : em(100px);
     width: calc(25% - 30px);
-  
+    @include for-mobile-only {  
+        width: 100%;
+    }
 }
 .contact__info-details{
     margin-top : em(55px);
@@ -30,9 +35,16 @@
 .contact__info-desc {
     height: 117px;
     width: 180px;
-    line-height: 22px
+    line-height: 22px;
+    @include for-mobile-only {  
+        width: 100%;
+        height: auto;
+    }
 }
 .contact-form__sumbit-button {
     border: none;
     color : #d7fcf5;
+    @include for-mobile-only {  
+        width: 100%;
+    }
 }

@@ -12,6 +12,18 @@
     margin: 0 10px;
 }
 
+#meme-gallery li img {
+    cursor: pointer;
+    transform: scale(1, 1);
+    /*filter: grayscale(0%);*/
+    transition: 0.5s;
+}
+
+#meme-gallery li img:hover {
+    transform: scale(1.2, 1.2);
+    /*filter: grayscale(20%);*/
+}
+
 .meme-container {
     position: relative;
     right: 0;
