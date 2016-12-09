@@ -76,11 +76,11 @@
                         <div class="top-text text-box column-right">
                             <input type="text" onkeyup="updateLabels('top', 'text', this.value)" class="editor-tools__text-top" placeholder="Upper text">
                             <div class="editor-tools__top">
-                                <input type="color" oninput="updateLabels('top', 'color', this.value)" class="editor-font__color" value="#101010">
+                                <input type="color" oninput="updateLabels('top', 'color', this.value)" class="editor-font__color active" value="#101010">
                                 <button class="fa fa-plus" aria-hidden="true" onclick="updateLabels('top', 'sizeMod', 2)"></button>
                                 <button class="fa fa-minus" aria-hidden="true" onclick="updateLabels('top', 'sizeMod', -2)"></button>
-                                <button class="fa fa-adjust" onclick="updateLabels('top', 'shadow')"></button>
-                                <button class="fa fa-adjust" onclick="updateLabels('top', 'weight')"></button>
+                                <button class="fa fa-font active toggle-btn" onclick="updateLabels('top', 'shadow')"></button>
+                                <button class="fa fa-bold active toggle-btn" onclick="updateLabels('top', 'weight')"></button>
                                 <select onChange="updateLabels('top', 'font', value)" class="editor-tools__font">
                                     <option value="Arial">Arial</option>
                                     <option value="Verdana">Verdana</option>
@@ -101,11 +101,11 @@
                         <div class="bottom-text text-box column-right">
                             <input type="text" onkeyup="updateLabels('bottom', 'text', this.value)" class="editor-tools__text-bot" placeholder="Bottom text">
                             <div class="editor-tools__top">
-                                <input type="color" oninput="updateLabels('bottom', 'color', this.value)" class="editor-font__color" value="#101010">
+                                <input type="color" oninput="updateLabels('bottom', 'color', this.value)" class="editor-font__color active" value="#101010">
                                 <button class="fa fa-plus" aria-hidden="true" onclick="updateLabels('bottom', 'sizeMod', 2)"></button>
                                 <button class="fa fa-minus" aria-hidden="true" onclick="updateLabels('bottom', 'sizeMod', -2)"></button>
-                                <button class="fa fa-adjust" onclick="updateLabels('bottom', 'shadow')"></button>
-                                <button class="fa fa-adjust" onclick="updateLabels('bottom', 'weight')"></button>
+                                <button class="fa fa-font active toggle-btn" onclick="updateLabels('bottom', 'shadow')"></button>
+                                <button class="fa fa-bold active toggle-btn" onclick="updateLabels('bottom', 'weight')"></button>
                                 <select onChange="updateLabels('bottom', 'font', value)" class="editor-tools__font">
                                     <option value="Arial">Arial</option>
                                     <option value="Verdana">Verdana</option>
@@ -203,7 +203,7 @@
 
     <li id="hex-template" class="template">
         <div>
-            <img onclick="toggleMode(this)" src="assets/loading.gif" id="" class="gallery__item">
+            <img onclick="toggleMode(this)" src="assets/loading.gif" id="" class="gallery__item scrollToTop">
         </div>
     </li>
 

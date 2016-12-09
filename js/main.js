@@ -19,7 +19,7 @@ function createItems() {
     for (var i = 1; i < 14; i++) {
         gItems.push({
             id: i,
-            url: "",
+            url: '',
             keywords: getKeyWords(),
         });
     }
@@ -58,7 +58,7 @@ function getKeyWords() {
 function searchMeme(el) {
     var keyword = el.value;
     if (keyword === '') {
-        $('.gallery__item').removeClass('hide');
+        renderItems(gItems);
         return;
     }
     filterMeme(keyword, el);
@@ -71,6 +71,7 @@ function filterMeme(keyword, search) {
     // if the keyword came from a keyword button - clear search input
     if (!search) {
         document.querySelector('#seach-input').value = '';
+        scrollToTop();
     }
     gItems.forEach(function (item) {
         var match = item.keywords.some(function (itemKeyword) {
@@ -111,4 +112,5 @@ function toggleMode(trigger) {
         document.querySelector('.meme-container').classList.remove('editor-mode');
         elMain.classList.remove('editor-mode');
     }
+    scrollToTop();
 }

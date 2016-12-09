@@ -74,6 +74,9 @@
         &:first-child {
             border-left: 1px solid #797979;
         }
+        &.active {
+            background: #5d5d5d;
+        }
         &:hover {
             background: #5f5e5e;
         }
