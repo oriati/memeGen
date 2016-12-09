@@ -1,12 +1,14 @@
 'use strict'
 
 var gCanvas;
+var gCanvasContainer;
 var gCtx;
 var gElImg;
 var gMeme = {};         // = {meme:img , labels:{top:{text:'', x:100, y:100, weight:'bold',color},bottom:{text:'...',x:100 etc...}}}
 
 function initEditor(){
     gCanvas = document.querySelector('.editor-canvas');
+    gCanvasContainer = document.querySelector('#canvas-container');
     gCtx = gCanvas.getContext('2d');
 }
 // reciving elImg From image library and initializing canvas
@@ -54,6 +56,7 @@ function initLabels() {
 function drawMeme(){
     console.log('drawing');
     gCtx.drawImage(gMeme.meme, 0, 0, gElImg.naturalWidth, gElImg.naturalHeight);
+    resize(gCanvas, gCanvasContainer);
     for (var label in gMeme.labels) {
         if (gMeme.labels[label].shadow) {
         gCtx.shadowColor = 'gray';
@@ -98,5 +101,50 @@ function updateLabels(i, paramType, value){
 
 function downloadMeme(elLink) {
             elLink.href = gCanvas.toDataURL();
-            elLink.download = 'perfectMeme.jpg';
+            elLink.download = 'DaMemeGenerator.jpg';
 }
+
+function resize(canvas, container) {
+
+       // aspect ratio
+       var widthToHeight = canvas.width / canvas.height;
+       var newWidthToHeight = widthToHeight;
+ 
+       // cache the window dimensions (discount the border)
+       var newWidth = container.innerWidth,
+           newHeight = container.innerHeight;
+ 
+           newWidthToHeight = newWidth / newHeight;
+
+           console.log('width = ' , newWidth);
+ 
+       // scale the container using CSS		
+       if (newWidthToHeight > widthToHeight) {
+           newWidth = newHeight * widthToHeight;
+           container.style.height = newHeight + 'px';
+           container.style.width = newWidth + 'px';
+       } else {
+           newHeight = newWidth / widthToHeight;
+           container.style.width = newWidth + 'px';
+           container.style.height = newHeight + 'px';
+           console.log('changing width to' , container.style.width);
+       }
+ 
+       // adjust the container position   
+    //    container.style.marginTop = (-newHeight / 2) + 'px';
+    //    container.style.marginLeft = (-newWidth / 2) + 'px';
+ 
+   };
+ 
+   // listen to resize events
+   window.addEventListener('resize', function () {
+       resize(gCanvas, gCanvasContainer);
+   }, false);
+ 
+   // also resize the screen on orientation changes
+   window.addEventListener('orientationchange', function () {
+       resize(gCanvas, gCanvasContainer);
+   }, false);
+ 
+   // first resize
+//    resize();

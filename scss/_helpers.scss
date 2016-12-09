@@ -2,7 +2,7 @@
   list-style: none;
 }
 
-button {
+button, select {
   cursor: pointer;
 }
 
@@ -25,6 +25,18 @@ textarea {
 
 .template {
   display: none;
+}
+
+.float-start {
+  float: left;
+}
+
+.float-end {
+  float: right;
+}
+
+.clear-both {
+  clear: both;
 }
 
 /*----------  Flex Helpers  ----------*/

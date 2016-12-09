@@ -65,16 +65,16 @@
                     </div>
                 </div>
 
-        </div>
+            </div>
 
-        <div class="editor">
-            <div class="editor-main container flex ">
-                <canvas class="editor-canvas">Sorry, no canvas available</canvas>
-                <div class="editor-tools flex column align-center">
-                    <button class="fa fa-backward" aria-hidden="true" onclick="toggleMode()">Select Another Meme</button>
-                    <div class="texts">
-                        <div class="top-text text-box">
-                            <input type="text" onkeyup="updateLabels('top', 'text', this.value)" class="editor-tools__text-top">
+            <div class="editor">
+                <div class="container">
+                    <div class="inner-container">
+
+                        <button class="fa fa-arrow-left action-btn clean-btn column-left" aria-hidden="true" onclick="toggleMode()"> Back to Gallery</button>
+
+                        <div class="top-text text-box column-right">
+                            <input type="text" onkeyup="updateLabels('top', 'text', this.value)" class="editor-tools__text-top" placeholder="Upper text">
                             <div class="editor-tools__top">
                                 <input type="color" oninput="updateLabels('top', 'color', this.value)" class="editor-font__color" value="#101010">
                                 <button class="fa fa-plus" aria-hidden="true" onclick="updateLabels('top', 'sizeMod', 2)"></button>
@@ -86,11 +86,20 @@
                                     <option value="Verdana">Verdana</option>
                                     <option value="Times New Roman">Times New Roman</option>
                                     <option value="Courier New">Courier New</option>
-                                </select>
+                            </select>
+                                <div class="clear-both"></div>
                             </div>
                         </div>
-                        <div class="bottom-text text-box">
-                            <input type="text" onkeyup="updateLabels('bottom', 'text', this.value)" class="editor-tools__text-bot">
+
+                        <div class="canvas-window column-left">
+                            <div id="canvas-container">
+                                <canvas class="editor-canvas">Sorry, no canvas available</canvas>
+                            </div>
+                        </div>
+
+
+                        <div class="bottom-text text-box column-right">
+                            <input type="text" onkeyup="updateLabels('bottom', 'text', this.value)" class="editor-tools__text-bot" placeholder="Bottom text">
                             <div class="editor-tools__top">
                                 <input type="color" oninput="updateLabels('bottom', 'color', this.value)" class="editor-font__color" value="#101010">
                                 <button class="fa fa-plus" aria-hidden="true" onclick="updateLabels('bottom', 'sizeMod', 2)"></button>
@@ -102,11 +111,13 @@
                                     <option value="Verdana">Verdana</option>
                                     <option value="Times New Roman">Times New Roman</option>
                                     <option value="Courier New">Courier New</option>
-                                </select>
+                            </select>
+                                <div class="clear-both"></div>
                             </div>
                         </div>
+
+                        <a class="fa fa-download action-btn clean-btn download-btn column-right" aria-hidden="true" onclick="downloadMeme(this)">Download</a>
                     </div>
-                    <a class="fa fa-download" aria-hidden="true" onclick="downloadMeme(this)">Download</a>
                 </div>
             </div>
         </div>
@@ -126,10 +137,10 @@
                             both from the Culture and Education sectors and am always on the look out for the next project.
                         </div>
                         <div class="about__social-buttons flex self-end">
-                            <button ><a class="fa fa-facebook" aria-hidden="true" href="https://www.facebook.com/orenasi"></a></button>
-                            <button ><a class="fa fa-twitter" aria-hidden="true" href="https://twitter.com/search?q=asi%20oren&src=typd&lang=en"></a></button>
-                            <button ><a class="fa fa-google-plus" aria-hidden="true" href="https://plus.google.com/105916894339028297879"></a></button>
-                            <button ><a class="fa fa-linkedin" aria-hidden="true" href="https://il.linkedin.com/in/asi-oren-498ba890"></a></button>
+                            <button><a class="fa fa-facebook" aria-hidden="true" href="https://www.facebook.com/orenasi"></a></button>
+                            <button><a class="fa fa-twitter" aria-hidden="true" href="https://twitter.com/search?q=asi%20oren&src=typd&lang=en"></a></button>
+                            <button><a class="fa fa-google-plus" aria-hidden="true" href="https://plus.google.com/105916894339028297879"></a></button>
+                            <button><a class="fa fa-linkedin" aria-hidden="true" href="https://il.linkedin.com/in/asi-oren-498ba890"></a></button>
                         </div>
                     </div>
                 </div>
@@ -144,14 +155,14 @@
                         <h2>Ori Atias</h2>
                         <div class="sub-title">Front End Developer / Geologist</div>
                         <div class="desc">Taking my first steps in the digital world and basically turning 180 degrees form my previous life.
-                            Participating in a front end developer bootcamp and looking for intersting projects to 
-                            help me gain some experience.
+                            Participating in a front end developer bootcamp and looking for intersting projects to help me
+                            gain some experience.
                         </div>
                         <div class="about__social-buttons flex self-end">
-                            <button ><a class="fa fa-facebook" aria-hidden="true" href="https://www.facebook.com/ori.atias.31"></a></button>
-                            <button ><a class="fa fa-twitter" aria-hidden="true" href="https://twitter.com/search?q=ori%20atias&src=typd&lang=en"></a></button>
-                            <button ><a class="fa fa-google-plus" aria-hidden="true" href="https://plus.google.com/s/ori%20atias/top"></a></button>
-                            <button ><a class="fa fa-linkedin" aria-hidden="true" href="https://www.linkedin.com/in/ori-atias-764418134"></a></button>
+                            <button><a class="fa fa-facebook" aria-hidden="true" href="https://www.facebook.com/ori.atias.31"></a></button>
+                            <button><a class="fa fa-twitter" aria-hidden="true" href="https://twitter.com/search?q=ori%20atias&src=typd&lang=en"></a></button>
+                            <button><a class="fa fa-google-plus" aria-hidden="true" href="https://plus.google.com/s/ori%20atias/top"></a></button>
+                            <button><a class="fa fa-linkedin" aria-hidden="true" href="https://www.linkedin.com/in/ori-atias-764418134"></a></button>
                         </div>
                     </div>
                 </div>
@@ -166,7 +177,7 @@
                 <div class="sub-title">In order to get in touch use the contact form below</div>
                 <input type="text" name="name" placeholder="Name (Required)" required/>
                 <input type="email" name="Email" placeholder="Email (Required)" required/>
-                <input type="subject" name="subject" placeholder="Subject"/>
+                <input type="subject" name="subject" placeholder="Subject" />
                 <textarea name=massage rows="4" cols="50" placeholder="Write your message here" required></textarea>
                 <button type="submit" class="contact-form__sumbit-button self-end">Send</button>
             </form>
