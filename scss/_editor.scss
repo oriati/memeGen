@@ -36,14 +36,19 @@
     &:first-child{
         margin-bottom: 2em;
     }
-    &:last-child{
-        margin-top: 2em;
-    }
 }
+.editor-tools a {
+    margin-top: 2em;
+}
+
 
 .text-box>input {
     width: 100%;
 }
 .editor-tools__font{
     width:100%;
+}
+
+.download{
+    background : grey;
 }

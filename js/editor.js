@@ -3,7 +3,7 @@
 var gCanvas;
 var gCtx;
 var gElImg;
-var gMeme = {};
+var gMeme = {};         // = {meme:img , labels:{top:{text:'', x:100, y:100, weight:'bold',color},bottom:{text:'...',x:100 etc...}}}
 
 function initEditor(){
     gCanvas = document.querySelector('.editor-canvas');
@@ -95,7 +95,8 @@ function updateLabels(i, paramType, value){
     }
     drawMeme();
 }
-                         
-    
-    // drawCanvas();
 
+function downloadMeme(elLink) {
+            elLink.href = gCanvas.toDataURL();
+            elLink.download = 'perfectMeme.jpg';
+}
