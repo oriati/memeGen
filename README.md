@@ -5,5 +5,4 @@
 ````
 npm install
 
-```
 npm start
