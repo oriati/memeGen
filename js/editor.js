@@ -120,8 +120,6 @@ function resize(canvas, container) {
 
     newWidthToHeight = newWidth / newHeight;
 
-    console.log('width = ', newWidth);
-
     // scale the container using CSS		
     if (newWidthToHeight > widthToHeight) {
         newWidth = newHeight * widthToHeight;
@@ -131,7 +129,6 @@ function resize(canvas, container) {
         newHeight = newWidth / widthToHeight;
         container.style.width = newWidth + 'px';
         container.style.height = newHeight + 'px';
-        console.log('changing width to', container.style.width);
     }
 
 };
